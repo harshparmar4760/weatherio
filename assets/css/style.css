@@ -241,8 +241,25 @@ m-icon{
 }
 
 .has-state:hover::before{
-  color: #131214;
+  background-color: var(--white-alpha-4);
 }
+
+.has-state:is(:focus, :focus-visible)::before{
+  background-color: var(--white-alpha-8);
+  animation: ripple 250ms ease forwards;
+}
+
+@keyframes ripple{
+  0% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  100% {clip-path: circle(100% at 50% 50%);
+  }
+  }
+
+  .btn-primary{
+    background-color: var(--primary);
+  }
 
 
 
