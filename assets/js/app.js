@@ -7,7 +7,7 @@
 'use strict'
 
 import { fetchData, url } from "./api.js";
-import * as module from "./module.js"
+import * as module from "./module.js";
 
 /**
  * Add event listner on multiple elements
@@ -39,7 +39,7 @@ const searchTimeoutDuration = 500;
 
 searchField.addEventListener("input", function(){
 
-    setTimeout ?? clearTimeout(searchTimeout);
+    searchTimeout ?? clearTimeout(searchTimeout);
 
     if (!searchField.value){
         searchResult.classList.remove("active");
@@ -55,12 +55,7 @@ searchField.addEventListener("input", function(){
                 searchField.classList.remove("searching");
                 searchResult.classList.add("active");
                 searchResult.innerHTML=`
-                    <ul class="view-list" data-search-list>
-
-                        <li class="view-item">
-                            
-                        </li>
-                    </ul>
+                    <ul class="view-list" data-search-list></ul>
                 `;
 
                 const /** {Nodelist} | [] */ items = [];
@@ -81,7 +76,7 @@ searchField.addEventListener("input", function(){
                         <a href="#/weather?lat=${lat}&lon=${lon}" class="item-link has-state" aria-label="${name} weather" data-search-toggler></a>
                     `;
 
-                searchResult.querySelector("data-search-list").appendChild (searchItem);
+                searchResult.querySelector(".data-search-list").appendChild (searchItem);
                 items.push(searchItem.querySelector("[data-search-toggler]"));
                 }
             })
