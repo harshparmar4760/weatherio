@@ -100,10 +100,10 @@ export const aqiText = {
     },
     4: {
         level: "Poor",
-        message: ""
+        message: "Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects"
     },
     5: {
-        level: "",
-        message: ""
+        level: "Very Poor",
+        message: "Health warnings of emergency conditions. The entire population is more likely to be affected."
     },
 }
