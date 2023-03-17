@@ -22,7 +22,7 @@ export const fetchData = function(URL, callback){
 }
 
 export const url = {
-    currentweather(lat, lon){
+    currentWeather(lat, lon){
         return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`
     },
     forecast(lat, lon) {

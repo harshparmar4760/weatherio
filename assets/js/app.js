@@ -56,7 +56,7 @@ searchField.addEventListener("input", function(){
                 searchResult.classList.add("active");
                 searchResult.innerHTML=`
                     <ul class="view-list" data-search-list></ul>
-                `;
+                ` ;
 
                 const /** {Nodelist} | [] */ items = [];
 
@@ -65,7 +65,7 @@ searchField.addEventListener("input", function(){
                     searchItem.classList.add("view-item");
 
                     searchItem.innerHTML = `
-                        <span class="material-symbols-outlined">location_on</span>
+                        <span class="m-icon">location_on</span>
                         
                         <div>
                             <p class="item-title">${name}</p>
