@@ -7,6 +7,7 @@
 'use strict'
 
 import { fetchData, url } from "./api.js";
+
 import * as module from "./module.js";
 
 /**
@@ -15,7 +16,7 @@ import * as module from "./module.js";
  * @param {string} eventType Event Type e.g.: "click", "mouseover"
  * @param {Function} callback Callback function
  */
-const addEventListener = function (elements, eventType, callback) {
+const addEventOnElements = function (elements, eventType, callback) {
     for (const element of elements) element.addEventListener(eventType, callback);
 }
 
@@ -35,7 +36,7 @@ const searchField = document.querySelector("[data-search-field]");
 const searchResult = document.querySelector("[data-search-result]");
 
 let searchTimeout = null;
-const searchTimeoutDuration = 500;
+const serachTimeoutDuration = 500;
 
 searchField.addEventListener("input", function(){
 
@@ -50,7 +51,7 @@ searchField.addEventListener("input", function(){
     }
 
     if (searchField.value){
-        searchTimeout = setTimeout(()=> {
+        searchTimeout = setTimeout(() => {
             fetchData(url.geo(searchField.value), function (locations){
                 searchField.classList.remove("searching");
                 searchResult.classList.add("active");
@@ -80,6 +81,6 @@ searchField.addEventListener("input", function(){
                 items.push(searchItem.querySelector("[data-search-toggler]"));
                 }
             })
-        }, searchTimeoutDuration);
+        }, serachTimeoutDuration);
     }
 })

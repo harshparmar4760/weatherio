@@ -15,7 +15,7 @@ const currentLocation = function () {
         const {latitude, longitude} = res.coords;
 
         updateWeather(`lat=${latitude}`, `lon=${longitude}`);
-    }, err=> {
+    }, err => {
         window.location.hash = defaultLocation
     });
 }
@@ -43,7 +43,7 @@ window.addEventListener("hashchange", checkHash);
 
 window.addEventListener("load", function (){
     if(!window.location.hash){
-        window.location.hash = "#/current-location"
+      window.location.hash = "#/current-location"
     } else {
         checkHash();
     }
