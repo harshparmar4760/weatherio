@@ -27,7 +27,7 @@ const searchView = document.querySelector("[data-search-view]");
 const searchTogglers = document.querySelectorAll("[data-search-toggler]");
 
 const toggleSearch = () => searchView.classList.toggle("active");
-addEventListener(searchTogglers, "click", toggleSearch);
+addEventOnElements(searchTogglers, "click", toggleSearch);
 
 /**
  * Search Integration
@@ -36,7 +36,7 @@ const searchField = document.querySelector("[data-search-field]");
 const searchResult = document.querySelector("[data-search-result]");
 
 let searchTimeout = null;
-const serachTimeoutDuration = 500;
+const searchTimeoutDuration = 500;
 
 searchField.addEventListener("input", function(){
 
@@ -77,10 +77,10 @@ searchField.addEventListener("input", function(){
                         <a href="#/weather?lat=${lat}&lon=${lon}" class="item-link has-state" aria-label="${name} weather" data-search-toggler></a>
                     `;
 
-                searchResult.querySelector(".data-search-list").appendChild (searchItem);
+                searchResult.querySelector("[data-search-list]").appendChild (searchItem);
                 items.push(searchItem.querySelector("[data-search-toggler]"));
                 }
             })
-        }, serachTimeoutDuration);
+        }, searchTimeoutDuration);
     }
 })
